@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-title{
+            text-align: center;
+            font-weight: bold;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.251);
+        }
+        .small-heading{
+            font-size: 24px;
+            text-align: center;
+            color: white;
+        }
+        .form-container{
+            display: flex;
+            justify-content: space-between;  
+            align-items: center;     
+            height: 50vh;
+            border: 4px solid white;
+            border-radius: 2px;
+            padding: 10px 5px 10px 5px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.251);
+            margin-bottom: 15px;
+        }
+        label{
+            font-size: 18px;
+        }
+        .star-rating{
+            direction:rtl;
+            unicode-bidi: bidi-override;
+            font-size: 2rem;
+            display: inline-flex;
+        }
+        .star-rating input[type="radio"]{
+            display: none;
+        }
+        .star-rating label{
+            color: white;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .star-rating input[type="radio"]:checked ~label{
+            color:yellow
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~label {
+            color: yellow;
+        }
+        .star-ratingg{
+            direction:rtl;
+            unicode-bidi: bidi-override;
+            font-size: 2rem;
+            display: inline-flex;
+        }
+        .star-ratingg input[type="radio"]{
+            display: none;
+        }
+        .star-ratingg label{
+            color: white;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .star-ratingg input[type="radio"]:checked ~label{
+            color:yellow
+        }
+        .star-ratingg label:hover,
+        .star-ratingg label:hover ~label {
+            color: yellow;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvFIz4bKKCVDnLrgsxbwYqAlIIbdQeW45_g&s');background-size: cover;">
+    <h1 class="form-title">Employee Satisfaction</h1>
+    <h2 class="small-heading">Help us improve your experience</h2>
+ <div class="form-container">
+     <form action="/submit" method="POST">
+        <label for="Name">Name</label>
+        <input type="text" id="Name" name="Name" >
+        <br>
+        <br>
+        <label for="Employee_ID">Employee ID</label>
+        <input type="number" id="Employee_ID" name="Employee_ID">
+        <br>
+        <br>
+        <label>How would you rate your Supervisor attitude towards you and rest of your team?</label>
+        <div class="star-rating">
+        <input type="radio" id="5-stars" name="Supervisor_rating" value="5">
+        <label for="5-stars" title="5 stars">★</label>
+        <input type="radio" id="4-stars" name="Supervisor_rating" value="4">
+        <label for="4-stars" title="4 stars">★</label>
+        <input type="radio" id="3-stars" name="Supervisor_rating" value="3">
+        <label for="3-stars" title="3 stars">★</label>
+        <input type="radio" id="2-stars" name="Supervisor_rating" value="2">
+        <label for="2-stars" title="2 stars">★</label>
+        <input type="radio" id="1-star" name="Supervisor_rating" value="1">
+        <label for="1-star" title="1 star">★</label>
+        </div>
+        <br>
+        <br>
+        <label>How would you rate our HR Manager attitude?</label>
+        <div class="star-ratingg">
+        <input type="radio" id="5stars" name="hr_rating" value="5">
+        <label for="5stars" title="5 stars">★</label>
+        <input type="radio" id="4stars" name="hr_rating" value="4">
+        <label for="4stars" title="4 stars">★</label>
+        <input type="radio" id="3stars" name="hr_rating" value="3">
+        <label for="3stars" title="3 stars">★</label>
+        <input type="radio" id="2stars" name="hr_rating" value="2">
+        <label for="2stars" title="2 stars">★</label>
+        <input type="radio" id="1star" name="hr_rating" value="1">
+        <label for="1star" title="1 star">★</label>
+        </div>
+        <br>
+        <br>
+        <label for="team_satisfaction">How Satisfied are you with our team?</label>
+        <select id="team_satisfaction" name="team_satisfaction">
+          <option>Select</option>
+          <option>Very Much</option>
+          <option>Much</option>
+          <option>Not Satisfied</option>
+        </select>
+        <br>
+        <br>
+        <label>Are your team mates helpful to each other?</label>
+        <input type="radio" id="yes" name="team_helpfulness" value="Yes Totally">
+        <label for="yes">Yes Totally</label>
+        <input type="radio" id="a_bit" name="team_helpfulness" value="a bit">
+        <label for="a_bit">a bit</label>
+        <input type="radio" id="no_way" name="team_helpfulness" value="no way">
+        <label for="no_way">no way</label>
+        <br>
+        <br>
+        <label for="additional_comments">Do you have anything else that you like us to know?</label>
+        <input type="text" id="additional_comments" name="additional_comments">
+        <br>
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="Submit Form">
+     </form>
+    </div>
+</body>
+</html>
